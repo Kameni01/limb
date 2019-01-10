@@ -11,7 +11,7 @@ def news_list(request):
 """Функция выводящая статью подробно"""
 def new_single(request, pk):
     new = get_object_or_404(News, id=pk)
-    comment = Comments.objects.filter(new=pk)
+    comment = Comments.objects.filter(new=pk, moderation=True)
     if request.method=="POST":
         form = CommentForm(request.POST)
         if form.is_valid():
