@@ -12,4 +12,4 @@ def news_list(request):
 def new_single(request, pk):
     new = get_object_or_404(News, id=pk)
     comment = Comments.objects.filter(new=pk)
-    return render(request, "home/new_single.html", {"new": new, "Comments": comment})
+    return render(request, "home/new_single.html", {"new": new, "сommentaries": comment})
