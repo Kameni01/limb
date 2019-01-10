@@ -6,7 +6,7 @@
 
 {% block content %}
         <h1>{{ new.title }}</h1>
-        <p>{{ new.text }}</p>
+        <p>{{ new.text|safe }}</p>
         <hr>
 
         Категория: {{ new.category }}<br>
@@ -16,4 +16,3 @@
         <br>
         Автор: {{ new.user }} - {{ new.created }}
 {% endblock content %}
-
