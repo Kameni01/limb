@@ -15,4 +15,10 @@
                 {% endfor %}
         <br>
         Автор: {{ new.user }} - {{ new.created }}
+        <hr>
+        {% for comment in comments %}
+          Пользователь - {{ comment.user }}<br>
+          {{ comment.text }}<br>
+          Добавлен - {{ comment.created }}
+        {% endfor %}
 {% endblock content %}
