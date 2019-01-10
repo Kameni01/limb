@@ -12,4 +12,13 @@ def news_list(request):
 def new_single(request, pk):
     new = get_object_or_404(News, id=pk)
     comment = Comments.objects.filter(new=pk)
-    return render(request, "home/new_single.html", {"new": new, "сommentaries": comment})
+    if request.method=="POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.new = request.new
+            form.save()
+    else:
+        form = CommentForm()
+    return render(request, "home/new_single.html", {"new": new, "сommentaries": comment, 'form': form})

@@ -22,4 +22,9 @@
           {{ comment.text }}<br>
           Добавлен - {{ comment.created }}<br><hr>
         {% endfor %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="otpr">ОТПРАВИТЬ</button>
+        </form>
 {% endblock content %}
