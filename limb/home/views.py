@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from home.models import News, Comments
 from .forms import CommentForm
 
@@ -17,8 +17,9 @@ def new_single(request, pk):
         if form.is_valid():
             form = form.save(commit=False)
             form.user = request.user
-            form.new = request.new
+            form.new = new
             form.save()
+            return redirect(new_single, pk)
     else:
         form = CommentForm()
     return render(request, "home/new_single.html", {"new": new, "сommentaries": comment, 'form': form})
