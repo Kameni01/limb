@@ -22,4 +22,6 @@ def new_single(request, pk):
             return redirect(new_single, pk)
     else:
         form = CommentForm()
-    return render(request, "home/new_single.html", {"new": new, "сommentaries": comment, 'form': form})
+    return render(request, "home/new_single.html", {"new": new,
+                "сommentaries": comment, 
+                'form': form})

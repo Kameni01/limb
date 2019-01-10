@@ -16,12 +16,20 @@
         <br>
         Автор: {{ new.user }} - {{ new.created }}
         <hr>
+
         <h3>Комментарии</h3>
         {% for comment in сommentaries %}
           Пользователь - {{ comment.user }}<br>
           {{ comment.text }}<br>
           Добавлен - {{ comment.created }}<br><hr>
         {% endfor %}
+
+        <!-- {% for comment in new.comments_set.all %}
+          Пользователь - {{ comment.user }}<br>
+          {{ comment.text }}<br>
+          Добавлен - {{ comment.created }}<br><hr>
+        {% endfor %} -->
+
         <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}
