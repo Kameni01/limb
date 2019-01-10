@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.site',
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django_summernote',
 
     'allauth',
-    'allauth.account'
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
 )
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/account/login/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackends'
