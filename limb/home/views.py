@@ -23,5 +23,5 @@ def new_single(request, pk):
     else:
         form = CommentForm()
     return render(request, "home/new_single.html", {"new": new,
-                "сommentaries": comment, 
+                "сommentaries": comment,
                 'form': form})

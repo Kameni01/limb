@@ -1,5 +1,9 @@
-{% for new in news %}
-    <h2><a href="{% url 'new_single' pk=new.id %}">{{ new.title }}</a></h2>
-    <p>{{ new.text_min|safe }}</p>
-    <p>{{ new.created }}</p>
-{% endfor %}
+{% extends 'home/base.html' %}
+
+{% block news_list %}
+  {% for new in news %}
+      <h2><a href="{% url 'new_single' pk=new.id %}">{{ new.title }}</a></h2>
+      <p>{{ new.text_min|safe }}</p>
+      <p>{{ new.created }}</p>
+  {% endfor %}
+{% endblock news_list %}
