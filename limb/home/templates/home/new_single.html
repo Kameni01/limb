@@ -16,10 +16,28 @@
         <br>
         Автор: {{ new.user }} - {{ new.created }}
         <hr>
+
         <h3>Комментарии</h3>
         {% for comment in сommentaries %}
           Пользователь - {{ comment.user }}<br>
           {{ comment.text }}<br>
           Добавлен - {{ comment.created }}<br><hr>
         {% endfor %}
+        {% if user.is_active %}
+          <form action="" method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">ОТПРАВИТЬ</button>
+          </form>
+        {% else %}
+          <h4>Чтобы оставить комментарий нужно быть авторизованным пользователем</h4>
+        {% endif %}
+
+        <!-- {% for comment in new.comments_set.all %}
+          Пользователь - {{ comment.user }}<br>
+          {{ comment.text }}<br>
+          Добавлен - {{ comment.created }}<br><hr>
+        {% endfor %} -->
+
+
 {% endblock content %}
