@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Comments
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 """Forma commentariev na site"""
 class CommentForm(ModelForm):
@@ -7,6 +8,6 @@ class CommentForm(ModelForm):
         model = Comments
         fields = ('text', )
         widgets = {
-            #'foo' = SummernoteWidget()
-            'text' = SummernoteInplaceWidget()
+            'text' : SummernoteWidget(),
+            #'text' : SummernoteInplaceWidget()
         }

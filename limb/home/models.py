@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 User = get_user_model()
 
 class Category(models.Model):
