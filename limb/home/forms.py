@@ -6,3 +6,7 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comments
         fields = ('text', )
+        widgets = {
+            #'foo' = SummernoteWidget()
+            'text' = SummernoteInplaceWidget()
+        }

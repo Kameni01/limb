@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
 </head>
 <body>
-  <input type="text" value="" name="search" placeholder="Поиск...">
-  {% block search %}
+  <div class="container">
+    <div class="container">
+      <input type="text" value="" name="search" placeholder="Поиск...">
+      {% block search %}
 
-  {% endblock search %}
-  {% block content %}
+      {% endblock search %}
+    </div>
+    <div class="container">
+      {% block content %}
 
-  {% endblock content %}
+      {% endblock content %}
+    </div>
+  </div>
 </body>
 </html>
