@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>{{ text }}</h1>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+  <form class="" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ОТПРАВИТЬ</button>
+  </form>
+{% endblock content %}
