@@ -18,9 +18,9 @@ class Ticket(models.Model):
     """Tickets class"""
     user = models.ForeignKey(User, verbose_name="Пользователь",
                             on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, "Категория",
+    category = models.ForeignKey(Category, verbose_name="Категория",
                             on_delete=models.CASCADE)
-    title = models.Charfield("Тема", max_length=100)
+    title = models.CharField("Тема", max_length=100)
     text = models.TextField("Текст письма", max_length=1000)
 
     class Meta:
