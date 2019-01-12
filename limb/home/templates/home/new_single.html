@@ -20,7 +20,7 @@
         <h3>Комментарии</h3>
         {% for comment in сommentaries %}
           Пользователь - {{ comment.user }}<br>
-          {{ comment.text }}<br>
+          {{ comment.text|safe }}<br>
           Добавлен - {{ comment.created }}<br><hr>
         {% endfor %}
         {% if user.is_active %}
