@@ -7,7 +7,7 @@
 
 #Установка
 
--pip install requirements.txt
+-pip install -r requirements.txt
 -открываем в консоли корневую директорию сайта
 -python manage.py migrate
 -python manage.py makemigrations
