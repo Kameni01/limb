@@ -13,5 +13,9 @@
   предустановленные)
 -открываем в консоли корневую директорию сайта
 -python manage.py migrate
--python manage.py makemigrations
+-python manage.py createsuperuser(Создание админа джанги(Админки))
+-Вводим логин суперпользователя
+-Вводим его почту
+-Вводим пароль и подтверждаем
+-django-admin createsuperuser(Создание)
 -python manage.py runserver

@@ -6,6 +6,7 @@
       <p>{{ new.text_min|safe }}</p>
       <p>{{ new.created }}</p>
       {% if request.user == new.user %}
+        <br>
         <a href="{% url 'update_post' pk=new.id %}"><button type="button" name="UpdatePost" class="btn btn-info">РЕДАКТИРОВАТЬ</button></a>
       {% endif %}
   {% endfor %}
