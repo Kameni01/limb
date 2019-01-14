@@ -5,5 +5,8 @@
       <h2><a href="{% url 'new_single' pk=new.id %}">{{ new.title }}</a></h2>
       <p>{{ new.text_min|safe }}</p>
       <p>{{ new.created }}</p>
+      {% if request.user == new.user %}
+        <a href="{% url 'update_post' pk=new.id %}"><button type="button" name="UpdatePost" class="btn btn-info">РЕДАКТИРОВАТЬ</button></a>
+      {% endif %}
   {% endfor %}
 {% endblock news_list %}

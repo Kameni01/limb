@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from home.models import News, Comments
 from django.views.generic.edit import CreateView, UpdateView
-
+from django.urls import reverse
 
 from .forms import CommentForm, PostForm
 from .models import User, News
@@ -43,3 +43,13 @@ class create_post(CreateView):
 
     def success_url(self):
         return redirect('')
+
+"""Класс для редактирования постов"""
+class update_post(UpdateView):
+    model = News
+    form = PostForm
+    fields = ('category', 'title', 'text_min', 'text', 'tags', 'description', 'keywords')
+    template_name = 'home/create_post.html'
+
+    def get_success_url(self):
+        return reverse('list_news')

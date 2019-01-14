@@ -7,4 +7,5 @@
     <p>{{ ticket.text|safe }}</p>
     <a class="btn btn-info" href="{% url 'update-ticket' pk=ticket.id %}">Редактировать</a>
   {% endfor %}
+  <a href="{% url 'add-ticket' %}"><button type="button" name="AddTicket" class="btn btn-success">Отправить сообщение</button></a>
 {% endblock content %}
