@@ -49,7 +49,7 @@ class UpdateTicket(UpdateView):
     """Редактирование тикета"""
     model = Ticket
     form = AddTicketForm
-    fields = fields = ('category','title', 'text')
+    fields = ('category','title', 'text')
     template_name = "ticket/update-ticket.html"
 
     def get_success_url(self):

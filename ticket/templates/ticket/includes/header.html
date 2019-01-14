@@ -7,9 +7,16 @@
 
     </div>
     <div class="col-md-2">
-      <a href="{% url 'list-ticket' %}"><button type="button" name="ticket_list_url" class="btn btn-warning">ТИКЕТЫ</button></a>
+      {% if user.is_active %}
+        <a href="{% url 'list-ticket' %}"><button type="button" name="ticket_list_url" class="btn btn-mute">ТИКЕТЫ</button></a>
+      {% endif %}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
+      {% if user.is_active %}
+        <a href="{% url 'create_post' %}"><button type="button" name="CreatePost" class="btn btn-mute">Добавть пост</button></a>
+      {% endif %}
+    </div>
+    <div class="col-md-1">
 
     </div>
     {% if user.is_active %}
