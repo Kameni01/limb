@@ -21,15 +21,18 @@
     </div>
     {% if user.is_active %}
       <div class="col-md-2">
+
+      </div>
+      <div class="col-md-2">
         <a href="{% url 'account_logout' %}"><button type="button" name="button" class="btn btn-danger">ВЫХОД</button></a>
       </div>
     {% else %}
       <div class="col-md-2">
+        <a href="{% url 'account_signup' %}"><button type="button" name="button" class="btn btn-primary">РЕГИСТРАЦИЯ</button></a>
+      </div>
+      <div class="col-md-2">
         <a href="{% url 'account_login' %}"><button type="button" name="button" class="btn btn-success">ВОЙТИ</button></a>
       </div>
     {% endif %}
-    <div class="col-md-2">
-      <a href="{% url 'account_signup' %}"><button type="button" name="button" class="btn btn-primary">РЕГИСТРАЦИЯ</button></a>
-    </div>
   </div>
 {% endblock header %}
